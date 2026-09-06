@@ -99,3 +99,34 @@ signal:Update(100)
 50
 ```
 Como se puede ver, el 100 no se imprimió, ya que el método `:Listen()` de desconectó antes de ese último `:Update()`.
+
+## Otros métodos
+### `:Once()`
+Ejecuta una sola vez una función (callback) dada (a diferencia de `:Listen()`, no devuelve ninguna función de limpieza, ya que no es necesaria).
+``` lua
+signal:Once(function(newValue)
+    print(newValue)
+end)
+
+signal:Update(1)
+signal:Update(2)
+signal:Update(3)
+```
+**Output**
+``` text
+1
+```
+A diferencia de `:Listen()`, `:Once()` solo se ejecuta una vez.
+
+### `:Clear()`
+Desconecta todos los listeners creados con `:Listen()` al instante.
+``` lua
+signal:Listen(callback)
+signal:Listen(callback2)
+signal:Listen(callback3)
+
+signal:Clear() -- Todos los listeners dejan de ejecutarse.
+```
+
+---
+Lo que hace `SignalStatus` para ser mucho más optimizado que usar `ValueBase` es manejar todo por tablas puras, evitando por completo instanciar objetos como `NumberValue`, `StringValue` o incluso `BindableEvent`.
