@@ -12,7 +12,7 @@ Primero, crea una carpeta dentro de `ReplicatedStorage` y llámala **"Packages"*
 
 En un script (ya sea de servidor o de cliente), vamos a requerir el módulo de `StateSignal`.
 ``` lua
-local StateSignal = require(path.to.SignalStatus)
+local StateSignal = require(path.to.StateSignal)
 ```
 
 Para crear un objeto `StateSignal` usaremos el método constructor: `StateSignal.new()`. Este método `.new()` lleva como parámetro el valor inicial y es **OBLIGATORIO**, de este modo también obtiene el tipo de dato que manejará tu objeto `StateSignal`.
