@@ -10,7 +10,7 @@ Primero, crea una carpeta dentro de `ReplicatedStorage` y llámala **"Packages"*
 
 `StateSignal` es una librería que puedes usar tanto en el cliente como en el servidor, por eso la añadiremos a `Packages` dentro de `ReplicatedStorage`.
 
-En un script (ya sea de servidor o de cliente), vamos a requerir el módulo de `SignalStatus`.
+En un script (ya sea de servidor o de cliente), vamos a requerir el módulo de `StateSignal`.
 ``` lua
 local StateSignal = require(path.to.SignalStatus)
 ```
