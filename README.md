@@ -34,7 +34,7 @@ local otherSignal = StateSignal.new({ username = "Coder", id = 1 })
 Con el método `:Get()`, obtienes el valor actual que guarda tu objeto `StateSignal`.
 ``` lua
 local signal = StateSignal.new(100)
-local value = StateSignal:Get()
+local value = signal:Get()
 
 print(value)
 ```
