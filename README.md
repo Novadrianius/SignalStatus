@@ -98,7 +98,7 @@ signal:Update(100)
 ``` text
 50
 ```
-Como se puede ver, el 100 no se imprimió, ya que el método `:Listen()` de desconectó antes de ese último `:Update()`.
+Como se puede ver, el 100 no se imprimió, ya que el método `:Listen()` se desconectó antes de ese último `:Update()`.
 
 ## Otros métodos
 ### `:Once()`
@@ -119,7 +119,7 @@ signal:Update(3)
 A diferencia de `:Listen()`, `:Once()` solo se ejecuta una vez.
 
 ### `:Clear()`
-Desconecta todos los listeners creados con `:Listen()` al instante.
+Desconecta todos los listeners creados con `:Listen()` o con `:Once()` al instante.
 ``` lua
 signal:Listen(callback)
 signal:Listen(callback2)
