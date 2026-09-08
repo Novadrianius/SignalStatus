@@ -119,12 +119,44 @@ signal:Update(3)
 ```
 A diferencia de `:Listen()`, `:Once()` solo se ejecuta una vez.
 
+### `:Run()`
+Este método es similar a `:Listen()`, ya que se ejecuta con cada llamada a `:Update()`. Sin embargo, este método ejecuta un callback cuando se llama y cuando se usa `:Update()`
+``` lua
+local signal = StateSignal.new(0)
+
+signal:Run(function(value)
+    print("Value:", value)
+end)
+
+signal:Update(100)
+```
+**Output**
+``` text
+Value: 0
+Value: 100
+```
+`:Run()` también devuelve una función de limpieza, la cual deja de ejecutar a este método una vez es llamada.
+``` lua
+local signal = StateSignal.new("Hola")
+
+local disconnect = signal:Run(function(value)
+    print("Mensaje:", value)
+end)
+
+disconnect()
+signal:Update("Adios")
+```
+**Output**
+``` text
+Mensaje: Hola
+```
+
 ### `:Clear()`
-Desconecta todos los listeners creados con `:Listen()` o con `:Once()` al instante.
+Desconecta todos los listeners creados con `:Listen()`, `:Once()` o `:Run()` al instante.
 ``` lua
 signal:Listen(callback)
-signal:Listen(callback2)
-signal:Listen(callback3)
+signal:Once(callback2)
+signal:Run(callback3)
 
 signal:Clear() -- Todos los listeners dejan de ejecutarse.
 ```
