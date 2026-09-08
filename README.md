@@ -3,7 +3,7 @@
 **StateSignal** es una librería que proporciona una solución de estado reactivo. Es ultra ligera al evitar uso de instanciamiento en el `DataModel` y puede comportarse como un `ValueBase`: Le asignas un valor, puedes modificarlo y puedes escuchar los cambios en el valor.
 
 ---
-### Puedes descargar StateSignal [aquí](https://create.roblox.com/store/asset/94641123824245/SignalStatus).
+### Puedes descargar StateSignal [aquí](https://create.roblox.com/store/asset/95867414750073/StateSignal).
 
 ## Inicio
 Primero, crea una carpeta dentro de `ReplicatedStorage` y llámala **"Packages"**. Dentro de esta carpeta guardarás todas las librerías que puedas usar en cualquier proyecto y donde se puedan usar tanto en el cliente como en el servidor.
