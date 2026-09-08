@@ -100,6 +100,7 @@ signal:Update(100)
 ```
 Como se puede ver, el 100 no se imprimió, ya que el método `:Listen()` se desconectó antes de ese último `:Update()`.
 
+---
 ## Otros métodos
 ### `:Once()`
 Ejecuta una sola vez una función (callback) dada (a diferencia de `:Listen()`, no devuelve ninguna función de limpieza, ya que no es necesaria).
